@@ -5,7 +5,6 @@ const mongoDB = require('./db');
 
 // Connect to MongoDB
 mongoDB();
-
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });

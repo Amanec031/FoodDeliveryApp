@@ -19,6 +19,9 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link nav-link-custom" to="/login">Login</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link nav-link-custom" to="/createuser">SignUp</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

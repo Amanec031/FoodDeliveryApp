@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://foodYum:foodyum123@cluster0.vh9jftx.mongodb.net/foodYum?retryWrites=true&w=majority';
+const mongoURI = '';
 
 const mongoDB = async () => {
     try {
