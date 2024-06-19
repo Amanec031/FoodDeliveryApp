@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const { Schema } = mongoose;//restructuring
+
+//schema of user
 const UserSchema = new Schema({
     name: {
         type: String,
@@ -11,9 +13,9 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
     },
-    password: {
+    password: {               
         type: String,
         required: true
     },
