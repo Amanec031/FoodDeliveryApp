@@ -1,43 +1,43 @@
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 const mongoDB = require('./db');
 const cors = require('cors');
+const morgan = require('morgan');
 
-// app.use((req, res, next) => {
-//     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-//     res.header(
-//         "Access-Control-Allow-Headers",
-//         "Origin, X-Requested-With, Content-Type, Accept"
-//     );
-//     next();
-// })
-// mongoDB.connect();
-
-//Enable CORS
+// Enable CORS
 app.use(cors({
     origin: 'http://localhost:3000',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-//Middleware to parse JSON
+// Middleware to parse JSON
 app.use(express.json());
 
-//Routes
-app.use('/api', require("./routes/CreateUser"))
+// Request logging
+app.use(morgan('dev'));
 
-//Default route
+// Routes
+app.use('/api', require("./routes/CreateUser"));
+app.use('/api', require("./routes/DisplayData"));
+
+// Default route
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-// Start the server
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 
+// Start the server after connecting to MongoDB
 mongoDB().then(() => {
     app.listen(port, () => {
-        console.log(`app listening on port ${port}`);
+        console.log(`App listening on port ${port}`);
     });
 }).catch(error => {
-    console.log('Failed to connect to the database:', error);
-})
+    console.error('Failed to connect to the database:', error);
+});

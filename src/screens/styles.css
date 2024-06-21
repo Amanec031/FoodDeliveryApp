@@ -1,0 +1,28 @@
+/* Custom styles for the carousel */
+.carousel-inner img {
+    object-fit: cover;
+    max-height:min-content;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+/* Custom styles for the search bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ced4da;
+    outline: none;
+}
