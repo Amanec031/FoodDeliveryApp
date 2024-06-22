@@ -1,7 +1,18 @@
-/* Custom styles for the carousel */
-.carousel-inner img {
+/* General container styling */
+.container {
+    padding: 20px;
+}
+
+/* Carousel styling */
+.small-carousel {
+    max-height: 300px; /* Adjust this value as needed */
+    overflow: hidden;
+}
+
+.small-carousel .carousel-inner img {
+    height: 300px; /* Adjust this value as needed */
     object-fit: cover;
-    max-height:min-content;
+    filter: brightness(30%);
 }
 
 .carousel-control-prev-icon,
@@ -10,19 +21,38 @@
     border-radius: 50%;
 }
 
-/* Custom styles for the search bar */
+/* Search box styling */
 .search-container {
-    display: flex;
-    justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .search-input {
-    width: 100%;
-    max-width: 600px;
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid #ced4da;
-    outline: none;
+    width: 75%;
+    background-color: white;
+    color: black;
+}
+
+/* Card styling */
+.card {
+    margin-bottom: 20px;
+}
+
+/* Heading styling */
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Utility classes */
+.my-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.row-cols-1 > .col {
+    margin-bottom: 20px;
 }
